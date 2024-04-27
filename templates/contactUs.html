@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{{ bootstrap.load_css() }}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>FlameWatchers</title>
+        <style>
+        .about{
+                background: url("../static/assets/img/contact-bg.jpg");
+                background-size: cover;
+                height: 80vh;
+            }
+        a.no-underline{
+                font-weight: bold;
+                text-decoration: none;
+                font-family: "Ubuntu";
+                color: black;
+            }
+        .abb{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-top: 150px !important;
+                color: grey;
+                font-family: "Ubuntu";
+                font-weight: bold;
+                font-size: 29px;
+            }
+        .atitle{
+                font-size: 120px;
+            }
+        .footer-font-size{
+            color: grey;
+        }
+        .c{
+            color: white;
+        }
+        .bold{
+                font-family: "Merriweather";
+                font-weight: bolder;
+                font-size: 15px;
+                color: white;
+                letter-spacing: 1px;
+                margin-left: 200px;
+                  margin-top: 100px;
+                }
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-dark">
+        <div class="about mb-5">
+            <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                <nav class="mb-1">
+                    <div>
+                        {% include "header.html" %}
+                    </nav>
+                    <div class="row gx-4 gx-lg-5 justify-content-center ">
+                        <div class="col-md-10 col-lg-8 col-xl-7">
+                            <div class="page-heading abb">
+                                <h1 class="atitle">Contact Us</h1>
+                                <span class="subheading">We will reach you by email.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <main class="container justify-content-center align-content-center text-center">
+                <h4 class="fw-light footer-font-size"> Want to get in touch? Fill out the form below
+                    <br> to send us a message and We will get back to you as soon as possible!
+                </h4>
+                <div class="my-5">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * Simplified SB Contact Form for the Tutorial* *-->
+                    <form
+                        id="contactForm"
+                        name="sentMessage"
+                        action="{{ url_for('contactus') }}"
+                        method="post"
+                    >
+                        <div class="form-floating">
+                            <input
+                                class="form-control"
+                                id="name"
+                                name="name"
+                                type="text"
+                                placeholder="Enter your name..."
+                                required
+                            >
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-floating">
+                            <input
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="Enter your email..."
+                                required
+                            >
+                            <label for="email">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input
+                                class="form-control"
+                                id="phone"
+                                name="phone"
+                                type="tel"
+                                placeholder="Enter your phone number..."
+                                required
+                            >
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        <div class="form-floating">
+                            <textarea
+                                class="form-control"
+                                id="message"
+                                name="message"
+                                placeholder="Enter your message here..."
+                                required
+                                style="height: 12rem"
+                            ></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <br>
+                        <button class="btn btn-success text-uppercase" id="submitButton" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </main>
+        <div class="container text-center">
+          <footer class="mt-auto bold">
+            <p class="text-white c">© 2024 FlameWatchers.  All rights reserved | Made by<a href="https://github.com/KrishDhanani" target="_blank" class="heading0 footer-font-size"> Krish Dhanani</a></p>
+          </footer>
+        </div>
+        </body>
+    </html>

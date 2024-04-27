@@ -49,5 +49,9 @@ def questions():
 def about():
     return render_template('About.html')
 
+@app.route('/contactus')
+def contactus():
+    return render_template('contactUs.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=1001)
