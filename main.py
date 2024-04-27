@@ -5,21 +5,11 @@ from flask_wtf import FlaskForm
 from sqlalchemy.orm import DeclarativeBase
 from wtforms.fields.simple import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
-
+from forms import SignInForm, SignUpForm
 
 class Base(DeclarativeBase):
     pass
 
-class SignInForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired(), Length(min=5)])
-    submit = SubmitField('Sign In')
-
-class SignUpForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = StringField('Password', validators=[DataRequired(), Length(min=5)])
-    password1 = PasswordField('Re-Enter Password', validators=[DataRequired(), Length(min=5), EqualTo('password', message='Passwords must match')])
-    submit = SubmitField('Sign Up')
 
 db = SQLAlchemy(model_class=Base)
 
@@ -47,9 +37,17 @@ def signup():
     form = SignUpForm()
     return render_template('Signup.html', form=form)
 
-@app.route('/buy')
-def buy():
+@app.route('/pricing')
+def pricing():
     return render_template('Buying.html')
+
+@app.route("/faqs")
+def questions():
+    return render_template('FAQs.html')
+
+@app.route("/about")
+def about():
+    return render_template('About.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=1001)

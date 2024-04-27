@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - FlameWatchers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add your custom styles here */
+        body {
+              background: pink;
+        }
+        .container {
+            padding-top: 50px; /* Adjust the top padding as needed */
+            padding-bottom: 50px; /* Adjust the bottom padding as needed */
+        }
+        .text-center{
+            color: darkorchid;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        a.no-underline{
+                font-weight: bold;
+                text-decoration: none;
+                font-family: "Ubuntu";
+                color: white;
+            }
+        .footer-margin{
+            margin-left: 450px;
+        }
+        a.heading0{
+            color: darkorchid;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-1 mt-0">
+            {% include "header.html" %}
+      </header>
+    </div>
+<div class="container">
+    <h1 class="text-center bold mb-5">Frequently Asked Questions (FAQs) <img src="../static/assets/img/thinking.png" height="100" width="100"></h1>
+
+    <div class="accordion" id="faqAccordion">
+        <!-- General Questions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingGeneral">
+                <button class="accordion-button bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseGeneral">
+                    General Questions
+                </button>
+            </h2>
+            <div id="collapseGeneral" class="accordion-collapse collapse show" aria-labelledby="headingGeneral" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <!-- FAQ items for General Questions -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingGeneral1">
+                            <button class="accordion-button bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGeneral1" aria-expanded="true" aria-controls="collapseGeneral1">
+                                What is FlameWatchers?
+                            </button>
+                        </h2>
+                        <div id="collapseGeneral1" class="accordion-collapse collapse show" aria-labelledby="headingGeneral1" data-bs-parent="#collapseGeneral1">
+                            <div class="accordion-body">
+                                FlameWatchers is a state-of-the-art fire detection and prevention system designed to safeguard your home, office, or business premises from the threat of fire.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingGeneral2">
+                            <button class="accordion-button bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGeneral2" aria-expanded="true" aria-controls="collapseGeneral2">
+                                How does FlameWatchers work?
+                            </button>
+                        </h2>
+                        <div id="collapseGeneral2" class="accordion-collapse collapse show" aria-labelledby="headingGeneral2" data-bs-parent="#collapseGeneral2">
+                            <div class="accordion-body">
+                                FlameWatchers utilizes advanced sensors to detect smoke, heat, and other signs of fire. When a potential fire hazard is detected, FlameWatchers sends real-time alerts to your smartphone, allowing you to take immediate action.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingGeneral3">
+                            <button class="accordion-button bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGeneral3" aria-expanded="true" aria-controls="collapseGeneral3">
+                                Is FlameWatchers suitable for both residential and commercial use?
+                            </button>
+                        </h2>
+                        <div id="collapseGeneral3" class="accordion-collapse collapse show" aria-labelledby="headingGeneral3" data-bs-parent="#collapseGeneral3">
+                            <div class="accordion-body">
+                                FlameWatchers utilizes advanced sensors to detect smoke, heat, and other signs of fire. When a potential fire hazard is detected, FlameWatchers sends real-time alerts to your smartphone, allowing you to take immediate action.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more FAQ items here -->
+                </div>
+            </div>
+        </div>
+        <!-- Add more sections for different categories of questions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingInstallation">
+                <button class="accordion-button bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstallation" aria-expanded="true" aria-controls="collapseInstallation">
+                    Installation and Setup
+                </button>
+            </h2>
+            <div id="collapseInstallation" class="accordion-collapse collapse show" aria-labelledby="headingInstallation" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <!-- FAQ items for General Questions -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingInstallation1">
+                            <button class="accordion-button bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstallation1" aria-expanded="true" aria-controls="collapseInstallation1">
+                                How easy is it to install FlameWatchers?
+                            </button>
+                        </h2>
+                        <div id="collapseInstallation1" class="accordion-collapse collapse show" aria-labelledby="headingInstallation1" data-bs-parent="#collapseInstallation1">
+                            <div class="accordion-body">
+                                FlameWatchers is designed for easy installation and setup. Simply follow the step-by-step instructions provided in the user manual, or contact our customer support team for assistance.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingInstallation2">
+                            <button class="accordion-button bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstallation2" aria-expanded="true" aria-controls="collapseInstallation2">
+                                Do I need any special tools or equipment to install FlameWatchers?
+                            </button>
+                        </h2>
+                        <div id="collapseInstallation2" class="accordion-collapse collapse show" aria-labelledby="headingInstallation2" data-bs-parent="#collapseInstallation2">
+                            <div class="accordion-body">
+                                No, FlameWatchers comes with all the necessary installation hardware and accessories. You won't need any special tools or equipment to set up FlameWatchers in your home or office.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingInstallation3">
+                            <button class="accordion-button bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstallation3" aria-expanded="true" aria-controls="collapseInstallation3">
+                                Can I install FlameWatchers myself, or do I need to hire a professional?
+                            </button>
+                        </h2>
+                        <div id="collapseInstallation3" class="accordion-collapse collapse show" aria-labelledby="headingInstallation3" data-bs-parent="#collapseInstallation3">
+                            <div class="accordion-body">
+                                While self-installation is possible, we recommend hiring a qualified professional for optimal results. A professional installer can ensure that FlameWatchers is installed correctly and configured to meet your specific needs.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more FAQ items here -->
+                </div>
+            </div>
+        </div>
+        <!-- Add more sections for different categories of questions -->
+    </div>
+</div>
+<div class="footer-margin">
+    {% include "footer.html" %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

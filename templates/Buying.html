@@ -30,12 +30,21 @@
         font-size: 15px;
         color: white;
         letter-spacing: 1px;
-        margin-left: 550px;
-          margin-top: 50px;
+        margin-left: 200px;
+          margin-top: 100px;
         }
       .white-color{
           color: white;
       }
+      .table tbody{
+        background-color: black !important;
+        color: white !important;
+      }
+
+      .table th, .table td {
+          color: black !important;
+      }
+
     </style>
   </head>
 <body class="background">
@@ -45,119 +54,126 @@
 
 <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
   <h1 class="display-4 text-center white-color">Pricing</h1>
-  <p class="fs-5  white-color">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+  <p class="fs-5  white-color">"With our fire detection and prevention system, you're not just purchasing a product – you're investing in peace of mind, safety, and protection for yourself, your loved ones, and your valuable assets. Don't wait for a fire emergency to strike. Take proactive steps today to secure your future."</p>
 
 
     <div class="container">
-        <div class="row"></div>
-        <div class="col-3"></div>
-            <div class="col-9 margin">
-                <!-- Your webpage content goes here -->
-                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Base</h4>
+        <div class="row">
+          <div class="col-3"></div>
+              <div class="col-9 margin">
+                  <!-- Your webpage content goes here -->
+                  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Base</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">₹1500<small class="text-body-secondary fw-light">/-</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>1 Device</li>
+                    <li>7 Day's Replacement</li>
+                    <li>Website access</li>
+                    <li>Email notification</li>
+                    <li>24/7 monitoring</li>
+                    <br>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-outline-primary">Place Order</button>
+                </div>
               </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>10 users included</li>
-                  <li>2 GB of storage</li>
-                  <li>Email support</li>
-                  <li>Help center access</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Pro</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">₹2500<small class="text-body-secondary fw-light">/-</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>1 Device</li>
+                    <li>1-year Onsite warranty</li>
+                    <li>Website access</li>
+                    <li>Email notification</li>
+                    <li>24/7 monitoring</li>
+                    <br>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Place Order</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Enterprise</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">₹3500<small class="text-body-secondary fw-light">/-</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>2 Device</li>
+                    <li>1-year Onsite warranty</li>
+                    <li>Website access</li>
+                    <li>Alert By SMS</li>
+                    <li>Email notification</li>
+                    <li>24/7 monitoring</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Place Order</button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Pro</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>20 users included</li>
-                  <li>10 GB of storage</li>
-                  <li>Priority email support</li>
-                  <li>Help center access</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm border-primary">
-              <div class="card-header py-3 text-bg-primary border-primary">
-                <h4 class="my-0 fw-normal">Enterprise</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>30 users included</li>
-                  <li>15 GB of storage</li>
-                  <li>Phone and email support</li>
-                  <li>Help center access</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-              </div>
-            </div>
-          </div>
-        </div>
-            </div>
         <div>
-            <h2 class="display-6 text-center mb-4">Compare plans</h2>
+          <br>
+          <br>
+            <h2 class="display-6 text-center white-color mb-4">Compare plans</h2>
             <div class="table-responsive">
       <table class="table text-center">
         <thead>
           <tr>
             <th style="width: 34%;"></th>
-            <th style="width: 22%;">Free</th>
+            <th style="width: 22%;">Base</th>
             <th style="width: 22%;">Pro</th>
             <th style="width: 22%;">Enterprise</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row" class="text-start">Public</th>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <th scope="row" class="text-start">No. of Devices</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>1</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>1</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>2</td>
           </tr>
           <tr>
-            <th scope="row" class="text-start">Private</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <th scope="row" class="text-start">Onsite Warranty</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>No</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>1 year</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>1 year</td>
           </tr>
         </tbody>
 
         <tbody>
           <tr>
-            <th scope="row" class="text-start">Permissions</th>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <th scope="row" class="text-start">Website Access</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
           </tr>
           <tr>
-            <th scope="row" class="text-start">Sharing</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <th scope="row" class="text-start">SMS Alert</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✕</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✕</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
           </tr>
           <tr>
-            <th scope="row" class="text-start">Unlimited members</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <th scope="row" class="text-start">Email Notification</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
           </tr>
           <tr>
-            <th scope="row" class="text-start">Extra security</th>
-            <td></td>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <th scope="row" class="text-start">24/7 Monitoring</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>✓</td>
           </tr>
         </tbody>
       </table>
