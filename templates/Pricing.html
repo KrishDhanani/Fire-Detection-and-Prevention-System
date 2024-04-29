@@ -57,10 +57,13 @@
           align-items: center;
           text-align: center;
           margin-top: 150px !important;
-          color: orange;
+          color: tomato;
           font-family: "Ubuntu";
           font-weight: bold;
           font-size: 29px;
+      }
+      .red-color{
+        color: red;
       }
     </style>
   </head>
@@ -84,12 +87,14 @@
 
 <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
   <h1 class="display-4 text-center white-color">Pricing</h1>
+  {% if not current_user.is_authenticated: %}
   <p class="fs-5  white-color">"With our fire detection and prevention system, you're not just purchasing a product – you're investing in peace of mind, safety, and protection for yourself, your loved ones, and your valuable assets. Don't wait for a fire emergency to strike. Take proactive steps today to secure your future."</p>
-
+  {% endif %}
 
     <div class="container">
         <div class="row">
           <div class="col-3"></div>
+          <p class="red-color">"If you want to access the Order Button, you'll need to either sign up for an account or sign in if you already have one."</p>
               <div class="col-9 margin">
                   <!-- Your webpage content goes here -->
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
@@ -108,9 +113,17 @@
                     <li>24/7 monitoring</li>
                     <br>
                   </ul>
+                  {% if current_user.is_authenticated: %}
                   <a href="{{ url_for('order', order_id=1) }}">
                     <button type="button" class="w-100 btn btn-lg btn-outline-primary">Place Order</button>
                   </a>
+                  {% endif %}
+                  {% if not current_user.is_authenticated: %}
+                  <a href="#">
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary disabled">Place Order</button>
+                  </a>
+                  <p class="red-color">Please SignIn for Order.</p>
+                  {% endif %}
                 </div>
               </div>
             </div>
@@ -129,9 +142,17 @@
                     <li>24/7 monitoring</li>
                     <br>
                   </ul>
+                  {% if current_user.is_authenticated: %}
                   <a href="{{ url_for('order', order_id=2)}}">
                     <button type="button" class="w-100 btn btn-lg btn-primary">Place Order</button>
                   </a>
+                  {% endif %}
+                  {% if not current_user.is_authenticated: %}
+                  <a href="#">
+                    <button type="button" class="w-100 btn btn-lg btn-primary disabled">Place Order</button>
+                  </a>
+                  <p class="red-color">Please SignIn for Order.</p>
+                  {% endif %}
                 </div>
               </div>
             </div>
@@ -150,9 +171,17 @@
                     <li>Email notification</li>
                     <li>24/7 monitoring</li>
                   </ul>
+                  {% if current_user.is_authenticated: %}
                   <a href="{{ url_for('order', order_id=3)}}">
                     <button type="button" class="w-100 btn btn-lg btn-primary">Place Order</button>
                   </a>
+                  {% endif %}
+                  {% if not current_user.is_authenticated: %}
+                  <a href="#">
+                    <button type="button" class="w-100 btn btn-lg btn-primary disabled">Place Order</button>
+                  </a>
+                  <p class="red-color">Please SignIn for Order.</p>
+                  {% endif %}
                 </div>
               </div>
             </div>

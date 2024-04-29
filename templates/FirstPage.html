@@ -146,10 +146,17 @@
         <h1 class="heading1"> FlameWatchers</h1><br>
           <h6 class="bold">Our innovative approach combines cutting-edge sensors and <br> real-time data analysis  to provide proactive fire<br> safety measures for homes, businesses, <br>and industrial facilities. </h6>
           <br>
+          {% if not current_user.is_authenticated: %}
           <p class="lead">
             <a href="{{ url_for('signup') }}" class="btn btn-lg fw-bold border-white btn-dark left-margin">Sign Up</a>
             <a href="{{ url_for('signin') }}" class="btn btn-lg fw-bold ">Sign in</a>
           </p>
+          {% endif %}
+          {% if current_user.is_authenticated: %}
+          <p class="lead">
+            <a href="{{ url_for('signout') }}" class="btn btn-lg fw-bold ">Sign Out</a>
+          </p>
+          {% endif %}
       </div>
     </div>
   </main>

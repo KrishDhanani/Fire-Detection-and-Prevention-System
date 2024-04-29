@@ -44,6 +44,9 @@
                 margin-left: 200px;
                   margin-top: 100px;
                 }
+        .form-label{
+            color: red;
+        }
         </style>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,17 +70,27 @@
                 </div>
             </div>
             <main class="container justify-content-center align-content-center text-center">
-                <h4 class="fw-light footer-font-size"> Want to get in touch? Fill out the form below
+
+                <h4 class="fw-light footer-font-size mt-5"> Want to get in touch? Fill out the form below
                     <br> to send us a message and We will get back to you as soon as possible!
                 </h4>
                 <div class="my-5">
                     <!-- * * * * * * * * * * * * * * *-->
                     <!-- * * Simplified SB Contact Form for the Tutorial* *-->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <ul class=flash>
+                            {% for message in messages %}
+                            <p class="form-label">{{ message }}</p>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    {% endwith %}
                     <form
                         id="contactForm"
                         name="sentMessage"
                         action="{{ url_for('contactus') }}"
-                        method="post"
+                        method="Post"
                     >
                         <div class="form-floating">
                             <input

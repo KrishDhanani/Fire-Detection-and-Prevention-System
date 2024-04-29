@@ -46,6 +46,17 @@
     <div class="col-3"></div>
         <div class="col-6 margin">
             <!-- Your webpage content goes here -->
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class=flash>
+                {% for message in messages %}
+                <p class="form-label">{{ message }}</p>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
             <img src="../static/assets/img/Company%20logo.png" height="150" width="150">
             <h1 class="color1">Please Sign in</h1><br>
             {{ render_form(form) }}
