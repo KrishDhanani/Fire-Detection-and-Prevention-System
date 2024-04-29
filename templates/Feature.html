@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FlameWatchers</title>
+        {{ bootstrap.load_css() }}
+        <style>
+        #map { height: 500px; }
+        .no-underline{
+                font-weight: bold;
+                color: orange;
+                text-decoration: none;
+                font-family: "Ubuntu";
+            }
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body data-rsssl="2" class="bg-dark">
+        <div>
+            {% include "header.html" %}
+        </div>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+            integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+            crossorigin=""
+        >
+        <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+        <main class="container mt-3">
+            <div id="map"></div>
+        </main>
+        <script>
+          const map = L.map('map');
+          // Initializes map
+
+          // Replace this line with your desired latitude and longitude
+          const lat = 23.587961;  // Change this to your latitude
+          const lng = 72.369324;    // Change this to your longitude
+          const zoomLevel = 13;  // Set your desired zoom level
+
+          map.setView([lat, lng], zoomLevel);
+          // Sets initial coordinates and zoom level
+
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 15,
+          attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map);
+          // Sets map data source and associates with map
+
+          // Remove the following lines as we're not using geolocation
+          let marker, circle, zoomed;
+          // navigator.geolocation.watchPosition(success, error);
+
+          // Replace success function with this one (adapted for specific lat/lng)
+          function success(pos) {
+            const accuracy = 20; // Replace with your estimated accuracy if needed
+            marker = L.marker([lat, lng]).addTo(map);
+            circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+            // Adds marker and circle to the map
+            map.fitBounds(circle.getBounds());
+            // Set zoom to boundaries of accuracy circle
+          }
+
+          success();  // Call the success function to display marker and circle
+
+          // Remove the error function as we're not using geolocation
+          function error(err) {
+            // No need for this function in this case
+          }
+        </script>
+    </body>
+</html>

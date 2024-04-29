@@ -5,7 +5,8 @@ from flask_wtf import FlaskForm
 from sqlalchemy.orm import DeclarativeBase
 from wtforms.fields.simple import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
-from forms import SignInForm, SignUpForm
+from forms import SignInForm, SignUpForm, OrderForm
+
 
 class Base(DeclarativeBase):
     pass
@@ -39,7 +40,7 @@ def signup():
 
 @app.route('/pricing')
 def pricing():
-    return render_template('Buying.html')
+    return render_template('Pricing.html')
 
 @app.route("/faqs")
 def questions():
@@ -52,6 +53,15 @@ def about():
 @app.route('/contactus')
 def contactus():
     return render_template('contactUs.html')
+
+@app.route('/feature')
+def feature():
+    return render_template('Feature.html')
+
+@app.route('/order/<int:order_id>')
+def order(order_id):
+    form = OrderForm()
+    return render_template('Order.html', form=form, order_id=order_id)
 
 if __name__ == '__main__':
     app.run(debug=True, port=1001)

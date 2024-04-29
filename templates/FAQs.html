@@ -24,14 +24,33 @@
                 font-weight: bold;
                 text-decoration: none;
                 font-family: "Ubuntu";
-                color: white;
+                color: orange;
             }
         .footer-margin{
             margin-left: 450px;
+            font-family: "Times New Roman";
         }
         a.heading0{
-            color: darkorchid;
+            color: grey;
         }
+        .about{
+          background: url("../static/assets/img/faqs-bg.jpg");
+          background-size: cover;
+          height: 75vh;
+        }
+        .atitle{
+          font-size: 120px;
+      }
+      .abb{
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          margin-top: 150px !important;
+          color: orange;
+          font-family: "Ubuntu";
+          font-weight: bold;
+          font-size: 29px;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,11 +58,15 @@
 
 </head>
 <body class="bg-dark">
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-1 mt-0">
-            {% include "header.html" %}
-      </header>
+<div class="about">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <nav class="mb-1">
+            <div>
+                {% include "header.html" %}
+            </div>
+        </nav>
     </div>
+</div>
 <div class="container">
     <h1 class="text-center bold mb-5">Frequently Asked Questions (FAQs) <img src="../static/assets/img/thinking.png" height="100" width="100"></h1>
 

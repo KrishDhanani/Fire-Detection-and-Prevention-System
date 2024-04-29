@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% from 'bootstrap5/form.html' import render_form %}
+    <head>
+        <meta charset="UTF-8">
+        <title>FlamWatchers</title>
+        {{ bootstrap.load_css() }}
+        <style>
+        label, h4{
+            color: #f76312;
+        }
+        a.no-underline{
+                font-weight: bold;
+                text-decoration: none;
+                font-family: "Ubuntu";
+                color: orange;
+            }
+        .about{
+          background: url("../static/assets/img/bags.jpg");
+          background-size: cover;
+          height: 75vh;
+        }
+          .atitle{
+              font-size: 120px;
+          }
+          .abb{
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              margin-top: 150px !important;
+              color: orange;
+              font-family: "Ubuntu";
+              font-weight: bold;
+              font-size: 29px;
+          }
+        </style>
+    </head>
+    <body class="bg-dark">
+        <div class="about">
+            <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                <nav class="mb-1">
+                    <div>
+                        {% include "header.html" %}
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container justify-content-center">
+            {% if id == 1: %}
+            <h4> You are Buying our "Base" version.</h4>
+            {% elif id == 2: %}
+            <h4> You are Buying our "Pro" version.</h4>
+            {% else: %}
+            <h4> You are Buying our "Enterprise" version.</h4>
+            {% endif %}
+            <div class="col-7">
+                {{ render_form(form) }}
+            </div>
+        </div>
+        {{ bootstrap.load_js() }}
+    </body>
+</html>
