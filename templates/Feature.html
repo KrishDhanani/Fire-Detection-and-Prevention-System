@@ -41,13 +41,13 @@
           // Replace this line with your desired latitude and longitude
           const lat = 23.587961;  // Change this to your latitude
           const lng = 72.369324;    // Change this to your longitude
-          const zoomLevel = 13;  // Set your desired zoom level
+          const zoomLevel = 17;  // Set your desired zoom level
 
           map.setView([lat, lng], zoomLevel);
           // Sets initial coordinates and zoom level
 
           L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 15,
+          maxZoom: 16,
           attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           }).addTo(map);
           // Sets map data source and associates with map
