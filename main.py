@@ -12,14 +12,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from forms import SignInForm, SignUpForm, OrderForm
 import requests
 
-channel_id = 2527010
-THINGSPEAK_API_KEY = "60X95M3U43W68XUI"
+channel_id =
+THINGSPEAK_API_KEY = ""
 parameter = {
     'api_key': THINGSPEAK_API_KEY,
 }
 
-My_EMAIL = "krishdhanani7433@gmail.com"
-PASSWORD = "qailealdeqpdtulo"
+My_EMAIL = ""
+PASSWORD = ""
 
 
 def convert_to_ist(zulu_time_str):
@@ -72,6 +72,7 @@ class User(UserMixin, db.Model):
     email: Mapped[str] = mapped_column(unique=True, nullable=False)
     phone: Mapped[int] = mapped_column(unique=True, nullable=False)
     password: Mapped[str] = mapped_column(nullable=False)
+    # sensor_id: Mapped[int] = mapped_column(unique=True, nullable=False)
 
 
 with app.app_context():
@@ -204,28 +205,23 @@ def contactus():
             return redirect(url_for('contactus'))
     return render_template('contactUs.html', current_user=current_user)
 
-
-def flameDetection():
-    response = requests.get(url=f'https://api.thingspeak.com/channels/{channel_id}/feeds.json', params=parameter)
-    response.raise_for_status()
-    data = response.json()['feeds']
-    print(data)
-    zulu_time = data[len(data)-1]['created_at'][11:].replace('T', ' ').replace('Z', '')
-
-    if int(data[len(data)-1]['field1']) == 1:
-        flame_status = "Flame Not detected"
-    else:
-        flame_status = "Flame Detected"
-
-    return {
-        'flame_status': flame_status,
-        'flame_sensor_id': data[0]['field2'],
-        'indian_time': zulu_time  # This should be the Indian time
-    }
 @app.route('/feature')
+@login_required
 def feature():
     return render_template('Feature.html', current_user=current_user)
 
+# @app.route('/feature')
+# @login_required
+# def FlameDetectd():
+#     with smtplib.SMTP('smtp.gmail.com', 587) as connection:
+#         connection.starttls()
+#         connection.login(user=My_EMAIL, password=PASSWORD)
+#         db.session.execute(db.select(User).where(User.email == current_user.email))
+#         connection.sendmail(
+#             from_addr=My_EMAIL,
+#             to_addrs=My_EMAIL,
+#         )
+#     return render_template('Feature.html', current_user=current_user)
 
 
 @app.route('/order/<int:order_id>', methods=["GET", "POST"])

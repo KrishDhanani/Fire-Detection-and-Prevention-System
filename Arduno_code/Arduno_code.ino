@@ -2,8 +2,8 @@
 #include <ESP8266WiFi.h>
 
 // WiFi settings
-const char* ssid = "Radhe_Radhe";
-const char* password = "radheradhe@1411";
+const char* ssid = "Q234";
+const char* password = "anmol0000";
 
 #define flameDigitalPin D1 // Digital output pin for flame sensor
 #define buzzerPin D2       // Digital output pin for buzzer

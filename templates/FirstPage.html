@@ -130,7 +130,11 @@
         <h3 class="float-md-start mb-0"><a class="no-underline company-name">FLAMEWATCHERS</a></h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <ul class="nav nav-pills">
+            {% if current_user.is_authenticated: %}
             <li class="nav-item"><a href="{{ url_for('feature') }}" class="nav-link">Features</a></li>
+            {% else: %}
+            <li class="nav-item"><a href="#" class="nav-link" onclick="alert('Please login to access features')">Features</a></li>
+            {% endif %}
             <li class="nav-item"><a href="{{ url_for('pricing') }}" class="nav-link">Pricing</a></li>
             <li class="nav-item"><a href="{{ url_for('questions') }}" class="nav-link">FAQs</a></li>
             <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
