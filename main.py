@@ -21,16 +21,26 @@ parameter = {
 My_EMAIL = "krishdhanani7433@gmail.com"
 PASSWORD = "qailealdeqpdtulo"
 
+
 def convert_to_ist(zulu_time_str):
     try:
+        # Parse the UTC time string
         zulu_time = datetime.strptime(zulu_time_str, '%Y-%m-%dT%H:%M:%SZ')
+
+        # Define timezone objects
         zulu_timezone = pytz.timezone('UTC')
         indian_timezone = pytz.timezone('Asia/Kolkata')
-        indian_time = zulu_timezone.localize(zulu_time).astimezone(indian_timezone)
+
+        # Localize the UTC time to the Indian timezone
+        indian_time = zulu_time.replace(tzinfo=zulu_timezone).astimezone(indian_timezone)
+
+        # Format the Indian time and return
         return indian_time.strftime('%H:%M:%S')
     except ValueError as e:
         print("Error converting time:", e)
         return None
+
+
 
 
 # Database Config.
@@ -195,9 +205,27 @@ def contactus():
     return render_template('contactUs.html', current_user=current_user)
 
 
+def flameDetection():
+    response = requests.get(url=f'https://api.thingspeak.com/channels/{channel_id}/feeds.json', params=parameter)
+    response.raise_for_status()
+    data = response.json()['feeds']
+    print(data)
+    zulu_time = data[len(data)-1]['created_at'][11:].replace('T', ' ').replace('Z', '')
+
+    if int(data[len(data)-1]['field1']) == 1:
+        flame_status = "Flame Not detected"
+    else:
+        flame_status = "Flame Detected"
+
+    return {
+        'flame_status': flame_status,
+        'flame_sensor_id': data[0]['field2'],
+        'indian_time': zulu_time  # This should be the Indian time
+    }
 @app.route('/feature')
 def feature():
     return render_template('Feature.html', current_user=current_user)
+
 
 
 @app.route('/order/<int:order_id>', methods=["GET", "POST"])
@@ -251,17 +279,3 @@ def order(order_id):
 if __name__ == '__main__':
     app.run(debug=True, port=1001)
 
-# while True:
-#     response = requests.get(url=f'https://api.thingspeak.com/channels/{channel_id}/feeds.json', params=parameter)
-#     response.raise_for_status()
-#     data = response.json()['feeds']
-#     zulu_time = data[len(data) - 1]['created_at'][11:].replace('T', ' ').replace('Z', '')
-#
-#     print(data)
-#     if int(data[len(data) - 1]['field1']) == 1:
-#         print("Flame Not detected \nIndian time:", datetime.now().time())
-#     if int(data[len(data)-1]['field1']) == 0:
-#         flame_detected_time = convert_to_ist(zulu_time)
-#         if flame_detected_time:
-#             print("Flame Sensor ID:", data['field2'], "\nFlame Detected Time (IST):", flame_detected_time)
-#     time.sleep(15)

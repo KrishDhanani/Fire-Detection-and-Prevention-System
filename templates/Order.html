@@ -40,14 +40,22 @@
     </head>
     <body class="bg-dark">
         <div class="about">
-            <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-                <nav class="mb-1">
-                    <div>
-                        {% include "header.html" %}
-                    </div>
-                </nav>
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <nav class="mb-1">
+                <div>
+                    {% include "header.html" %}
+            </nav>
+            <div class="row gx-4 gx-lg-5 justify-content-center ">
+              <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading abb">
+                  <h1 class="atitle">Let's Buy</h1>
+                  <span class="subheading">Fill this form and we'll reach you as soon as possible.</span>
+                </div>
+              </div>
             </div>
         </div>
+    </div>
+
         <div class="container justify-content-center">
             <div class="justify-content-center align-content-center text-center mt-5">
                 {% if id == 1: %}
