@@ -12,14 +12,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from forms import SignInForm, SignUpForm, OrderForm
 import requests
 
-channel_id =
-THINGSPEAK_API_KEY = ""
+channel_id = 2527010
+THINGSPEAK_API_KEY = "60X95M3U43W68XUI"
 parameter = {
     'api_key': THINGSPEAK_API_KEY,
 }
 
-My_EMAIL = ""
-PASSWORD = ""
+My_EMAIL = "krishdhanani7433@gmail.com"
+PASSWORD = "qailealdeqpdtulo"
 
 
 def convert_to_ist(zulu_time_str):
