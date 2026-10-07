@@ -53,15 +53,14 @@ Sensors (flame, smoke) → ESP8266 → ThingSpeak API → Flask backend
 ## How to run
 
 **1. Hardware**
-- Connect the sensors, buzzer, LED and button to the ESP8266 (add a wiring diagram or pin table here).
+- Connect the sensors, buzzer, LED and button to the ESP8266 (Pin Table will be available).
 - Upload the firmware with the Arduino IDE.
 
 **2. Software**
 ```bash
 git clone https://github.com/KrishDhanani/Fire-Detection-and-Prevention-System.git
 cd Fire-Detection-and-Prevention-System
-pip install -r requirements.txt
-python app.py
+python main.py
 ```
 
 **3. Configuration**
