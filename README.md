@@ -46,7 +46,9 @@ Sensors (flame, smoke) → ESP8266 → ThingSpeak API → Flask backend
 ![Device]
 <img width="1500" height="950" alt="img2" src="https://github.com/user-attachments/assets/6195c752-ca36-4bb9-8125-342364ef8f5e" /><img width="1280" height="700" alt="img1" src="https://github.com/user-attachments/assets/380437d3-620d-4db1-afc0-7f4574b47ba7" />
 
-![Dashboard](images/dashboard.png)
+![Dashboard]
+<img width="1912" height="992" alt="Screenshot 2025-04-22 134846" src="https://github.com/user-attachments/assets/0dbc51a9-f0ae-49d8-85c5-f3c7db737c5f" />
+
 
 ## How to run
 
